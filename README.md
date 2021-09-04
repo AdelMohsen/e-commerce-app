@@ -5,7 +5,6 @@ A new Flutter project.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-## ![WhatsApp Image 2021-07-31 at 7 47 12 PM (1)](https://user-images.githubusercontent.com/85968147/132110549-16d50668-89a6-4585-a54f-0ff34a3afd43.jpeg)
 
 A few resources to get you started if this is your first Flutter project:
 
