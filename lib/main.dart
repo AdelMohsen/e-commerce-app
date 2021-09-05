@@ -22,9 +22,9 @@ void main() async {
 
   Widget widget;
   bool? onBoarding = CacheHelper.readData(key: "onBoarding");
-  token = CacheHelper.readData(key: "token");
+  token = CacheHelper.readData(key: 'token');
   print(token);
-  if (onBoarding != null) {
+  if (onBoarding == true) {
     if (token != null)
       widget = HomeScreen();
     else

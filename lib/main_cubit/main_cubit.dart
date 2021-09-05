@@ -124,6 +124,7 @@ class MainCubit extends Cubit<MainState> {
     await Future.delayed(Duration(milliseconds: 1000));
     getCategoriesDate();
     getHomeData();
+    getProfileData();
     emit(RefreshSuccessState());
     refreshController.refreshCompleted();
   }

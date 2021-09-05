@@ -49,7 +49,7 @@ Widget customTextFormField(
         {TextEditingController? controller,
         String? labelText,
         String? hintText,
-          void Function()? onTap,
+        void Function()? onTap,
         String? Function(String?)? validator,
         void Function(String)? onChanged,
         Widget? preFixIcon,
@@ -65,13 +65,14 @@ Widget customTextFormField(
           hintText: hintText,
           prefixIcon: preFixIcon,
           suffixIcon: suffixIcon),
-      onTap:onTap,
+      onTap: onTap,
       validator: validator,
       onChanged: onChanged,
     );
+
 submit(context) {
   CacheHelper.saveData(key: 'onBoarding', value: true).then((value) {
-    if (value) {
+    if (value == true) {
       navigateAndRemove(context, LoginScreen());
     }
   }).catchError((error) {

@@ -116,10 +116,12 @@ class HomeScreen extends StatelessWidget {
                     height: 40.0,
                     color: primarySwatch,
                     onPressed: () {
-                      CacheHelper.removeData(key: token!).then((value) {
-                        if (value) {
+                      CacheHelper.removeData(key: 'token').then((value) {
+                        if (value == true) {
                           navigateAndRemove(context, LoginScreen());
                         }
+                      }).catchError((error) {
+                        print(error);
                       });
                     },
                     child: Row(

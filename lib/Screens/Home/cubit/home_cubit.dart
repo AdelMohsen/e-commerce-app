@@ -17,14 +17,13 @@ class HomeCubit extends Cubit<HomeStates> {
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
-    HomeModel? homeModel;
+  HomeModel? homeModel;
   PostFavData? postFavData;
   CategoriesModel? categoriesModel;
   late GetAllFavData getFavData;
   PostCartModel? postCartModel;
   late GetCartModel getCartModel;
   ProfileModel? profileModel;
-
 
   Map<int?, bool?> favourites = {};
   Map<int?, bool?> cart = {};
@@ -41,8 +40,8 @@ class HomeCubit extends Cubit<HomeStates> {
       });
       emit(HomeSuccessState());
     }).catchError((error) {
-      emit(HomeErrorState());
       print(error.toString());
+      emit(HomeErrorState());
     });
   }
 
@@ -85,13 +84,11 @@ class HomeCubit extends Cubit<HomeStates> {
     });
   }
 
-
-
   changeFavIcon(int? productId) {
     favourites[productId] = !favourites[productId]!;
     emit(ChangeFavIcon());
     DioHelper.postData(
-            url: Favourites, data: {'product_id': productId}, token: token)
+            url: Favourites, data: {'product_id': productId}, token: token,lang: 'en')
         .then((value) {
       postFavData = PostFavData.fromJson(value.data);
       if (!postFavData!.status!) {

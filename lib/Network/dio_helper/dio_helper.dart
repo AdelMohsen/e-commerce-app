@@ -13,7 +13,7 @@ class DioHelper {
   static Future<Response> getData(
       {required String url,
       Map<String, dynamic>? quires,
-      String? token,
+      String? token ,
       String? lang}) async {
     _dio.options.headers = {
       'Authorization': token ?? '',
